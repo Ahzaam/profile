@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "protfolio-758ce": {
+      "hosting": {
+        "profile": [
+          "protfolio-758ce"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "protfolio-758ce"
+  }
+}
