@@ -36,6 +36,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { WeatherComponent } from './Components/weather/weather.component';
 import { HeroComponent } from './Components/hero/hero.component';
 import { ProjectsComponent } from './Components/projects/projects.component';
+import { ContactComponent } from './Components/contact/contact.component';
+import { TeamComponent } from './Components/team/team.component';
+import { AboutComponent } from './Components/about/about.component';
 
 
 // Three JS component
@@ -68,6 +71,9 @@ import { ProjectsComponent } from './Components/projects/projects.component';
     HeroComponent,
     FooterComponent,
     ProjectsComponent,
+    ContactComponent,
+    TeamComponent,
+    AboutComponent,
     
   ],
   imports: [
