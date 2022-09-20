@@ -16,7 +16,7 @@
 .contact-box {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
   width: clamp(100px, 90%, 1500px);
-  margin: 80px 50px;
+  // margin: 80px 50px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -58,6 +58,15 @@
   border-radius: 10px 0 0 10px;
 }
 
+
+.good{
+  color: #20f87a;
+}
+.ok{
+  color:#d8d523;
+}
+
+
 .contact-form-wrapper {
   background-color: #ffffff8f;
   border-radius: 0 10px 10px 0;
@@ -70,6 +79,10 @@
     .contact-description{
         width: 100%;
         text-align: left
+    }
+    .contact-box {
+    
+      margin: 0;
     }
 }
 @media only screen and (max-width: 800px) {
@@ -85,12 +98,21 @@
   .contact-form-wrapper {
     border-radius: 0 0 10px 10px;
   }
+  .contact-box {
+    
+    margin: 0;
+  }
+  
+}
+.contact-box {
+    
+  margin: 0 !important;
 }
 
 @media only screen and (max-width: 400px) {
   .contact-box {
-    width: 95%;
-    margin: 8% 5%;
+    
+    margin: 0;
   }
 }
 
@@ -202,6 +224,9 @@ textarea:valid + label {
   h2 {
     font-size: clamp(40px, 10vw, 60px);
   }
+  .contact-box{
+   
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -216,5 +241,8 @@ textarea:valid + label {
   img {
     width: 38px;
     height: 38px;
+  }
+  .contact-box{
+   
   }
 }

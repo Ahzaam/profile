@@ -10,15 +10,17 @@
 }
 
 #contact {
+  
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .contact-box {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  // background-color: #f5f5f5;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 9px 0px;
   width: clamp(100px, 90%, 1500px);
-  margin: 80px 50px;
+  margin: 80px 0px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -35,33 +37,66 @@
 }
 .contact-form-wrapper{
     width: 40%;
+    position: relative;
+}
+
+.dot-cont{
+  bottom: 0;
+  margin-bottom: 40px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .contact-description{
-    margin-top: 50px;
+    margin: 80px 30px;
     width: 20%;
     text-align: left
 }
-
-.contact-links {
-  background-color: #1f2e43;
-  background: radial-gradient(
-      circle at 55% 92%,
-      #426691 0 12%,
-      transparent 12.2%
-    ),
-    radial-gradient(circle at 94% 72%, #426691 0 10%, transparent 10.2%),
-    radial-gradient(
-      circle at 20% max(78%, 350px),
-      #263a53 0 7%,
-      transparent 7.2%
-    ),
-    radial-gradient(circle at 0% 0%, #263a53 0 40%, transparent 40.2%), #1f2e43;
-  border-radius: 10px 0 0 10px;
+.dot{
+  width: 5px;
+  height: 5px;
+  margin: 10px;
+  border-radius: 50%;
+  display: inline-block;
 }
 
+h3{
+  margin: 0;
+  font-size: 20px;
+}
+
+.dot:nth-child(1){
+  background-color: #e0dd00;
+}
+.dot:nth-child(2){
+  background-color: #36cffd;
+}
+.dot:nth-child(3){
+  background-color: #20f87a;
+}
+.dot:nth-child(4){
+  background-color: #ff2a2a;
+}
+// .contact-links {
+//   background-color: #1f2e43;
+//   background: radial-gradient(
+//       circle at 55% 92%,
+//       #426691 0 12%,
+//       transparent 12.2%
+//     ),
+//     radial-gradient(circle at 94% 72%, #426691 0 10%, transparent 10.2%),
+//     radial-gradient(
+//       circle at 20% max(78%, 350px),
+//       #263a53 0 7%,
+//       transparent 7.2%
+//     ),
+//     radial-gradient(circle at 0% 0%, #263a53 0 40%, transparent 40.2%), #1f2e43;
+//   border-radius: 10px 0 0 10px;
+// }
+
 .contact-form-wrapper {
-  background-color: #ffffff8f;
+
   border-radius: 0 10px 10px 0;
 }
 @media only screen and (max-width: 1000px) {
@@ -79,8 +114,14 @@
   .contact-form-wrapper {
     width: 100%;
   }
+  .dot-cont{
+    bottom: 0;
+    margin-bottom: 0;
+  }
 
+ 
   .contact-links {
+    
     border-radius: 10px 10px 0 0;
   }
 
@@ -97,8 +138,8 @@
 }
 
 h2 {
-  font-family: "Arimo", sans-serif;
-  color: #fff;
+  font-family: 'Dosis', sans-serif;
+  color: rgb(80, 80, 80);
   font-size: clamp(30px, 6vw, 60px);
   letter-spacing: 2px;
   text-align: center;
@@ -207,7 +248,7 @@ textarea:valid + label {
     font-size: 25px;
     font-family: 'Dosis';
     line-height: 40px;
-    text-align: left;
+    text-align: justify;
 }
 .skills{
     
@@ -215,13 +256,16 @@ textarea:valid + label {
     font-family: 'Dosis';
 }
 .image{
-    border-radius: 50%;
+    border-radius:10px;
     width: 100px;
     height: 100px;
 }
 @media only screen and (max-width: 800px) {
   h2 {
     font-size: clamp(40px, 10vw, 60px);
+  }
+  .about{
+    font-size: 20px;
   }
 }
 

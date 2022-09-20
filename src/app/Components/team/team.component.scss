@@ -1,5 +1,5 @@
 $prefix: at;
-$totalColumns: 9;
+$totalColumns: 5;
 
 // Custom Prefix
 .#{$prefix} {
@@ -27,10 +27,10 @@ $totalColumns: 9;
     @for $i from 1 through $totalColumns {
       &[data-column="#{$i}"] {
         .#{$prefix}-column {
-          width: percentage( 1 / $i );
-          max-width: percentage( 1 / $i );
-          min-width: percentage( 1 / $i );
-          flex-basis: percentage( 1 / $i );
+          width: 20%;
+          max-width: 20%;
+          min-width:  20%;
+          flex-basis: 20%;
         }
       }
     }
@@ -157,7 +157,7 @@ body {
 }
 
 .container {
-  max-width: 1170px;
+  max-width: 1570px;
   width: 100%;
   margin: 100px auto;
   padding: 0 20px;

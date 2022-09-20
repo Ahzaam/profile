@@ -1,5 +1,5 @@
 <section id="contact">
-    <div class="contact-box">
+    <div class="contact-box" >
       <div class="contact-links">
         <h2>CONTACT</h2>
         <div class="links">
@@ -16,24 +16,25 @@
         </div>
       </div>
       <div class="contact-form-wrapper">
-        <form>
+        <form [formGroup]="myForm">
+          Value: {{ myForm.value | json  }}
           <div class="form-item">
-            <input type="text" name="sender" required>
+            <input type="text" name="sender" formControlName="name" required>
             <label>Name:</label>
           </div>
           <div class="form-item">
-            <input type="text" name="email" required>
+            <input type="text" name="email" formControlName="email" required>
             <label>Email:</label>
           </div>
           <div class="form-item">
-            <textarea class="" name="message" required></textarea>
+            <textarea class="" name="message" formControlName="message" required></textarea>
             <label>Message:</label>
           </div>
-          <button class="submit-btn">Send</button>  
+          <button class="submit-btn" (click)="submitForm()">Send</button>  
         </form>
       </div>
-      <div class="contact-description">
-       <h1>Feel free to leave a message it will send a push notification to ahzam and your name and email will encrypted and securely stored in firebase, Dont worry about Privacy</h1> 
+      <div class="contact-description text-secondary">
+       <h1>We love to hear a feedback from you, we will notify Ahzam soon as posible. <br> <span class="good">Your email will be used only for official purpose</span> <br><br> <span class="ok">** Your message will be tweeted **</span></h1> 
       </div>
     </div>
   </section>

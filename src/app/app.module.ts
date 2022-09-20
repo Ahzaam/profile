@@ -39,6 +39,18 @@ import { ProjectsComponent } from './Components/projects/projects.component';
 import { ContactComponent } from './Components/contact/contact.component';
 import { TeamComponent } from './Components/team/team.component';
 import { AboutComponent } from './Components/about/about.component';
+import { DialogComponent } from './Components/dialog/dialog.component';
+
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { EducationComponent } from './Components/education/education.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
+// Firebase Config
+
+import { environment } from "src/environments/environment";
+import { AngularFireModule } from "@angular/fire/compat";
+import { FirestoreModule } from "@angular/fire/firestore";
 
 
 // Three JS component
@@ -74,6 +86,8 @@ import { AboutComponent } from './Components/about/about.component';
     ContactComponent,
     TeamComponent,
     AboutComponent,
+    DialogComponent,
+    EducationComponent,
     
   ],
   imports: [
@@ -88,7 +102,10 @@ import { AboutComponent } from './Components/about/about.component';
     MatProgressSpinnerModule,
     MatInputModule,
     MatGridListModule,
-   
+    MatSnackBarModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    FirestoreModule,
   
     
   ],

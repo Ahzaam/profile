@@ -1,0 +1,26 @@
+// body{
+//     position: relative;
+// }
+
+.dialog{
+    position: fixed;
+    top: 10%;
+    right: 2%;
+    z-index: 1000;
+    height: 70px;
+    width: 250px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 9px 0px;
+    
+    background-color: #ffffffda;
+
+    p{
+        font-size: 25px;
+        margin:25px auto;
+    }
+}
+
+.bg{
+    background-color: aqua;
+}
