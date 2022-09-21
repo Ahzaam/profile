@@ -48,9 +48,10 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 // Firebase Config
 
-import { environment } from "src/environments/environment";
+import { environment } from "src/environments/environment.prod";
 import { AngularFireModule } from "@angular/fire/compat";
 import { FirestoreModule } from "@angular/fire/firestore";
+import { PricingComponent } from './Components/pricing/pricing.component';
 
 
 // Three JS component
@@ -88,6 +89,7 @@ import { FirestoreModule } from "@angular/fire/firestore";
     AboutComponent,
     DialogComponent,
     EducationComponent,
+    PricingComponent,
     
   ],
   imports: [

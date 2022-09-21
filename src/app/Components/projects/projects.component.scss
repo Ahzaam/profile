@@ -208,7 +208,7 @@ article:hover{
 
 .contact-links,
 .contact-form-wrapper {
-  padding: 8% 5% 10% 5%;
+  padding: 100px 50px;
 }
 
 
@@ -217,7 +217,7 @@ article:hover{
 
 }
 .contact-form-wrapper{
-    width: 70%;
+    width: 60%;
     text-align: left;
 }
 .twit-des{
@@ -226,13 +226,13 @@ article:hover{
 }
 .contact-description{
     margin: 60px 0 0 0 ;
-    width: 30%;
-    text-align: center;
-    align-items: center;
+    width: 40%;
     
+    text-align: center;
+
     img{
       width: 100%;
-      margin: 100px 50px;
+      margin: 40px auto;
       max-width: 300px;
     }
 }
@@ -259,7 +259,7 @@ h1{
   }
     .contact-description{
         width: 100%;
-        text-align: left
+     
     }
     .contact-box {
     
@@ -269,10 +269,12 @@ h1{
 @media only screen and (max-width: 800px) {
   .contact-links,
   .contact-form-wrapper {
+    padding: 50px 20px;
     width: 100%;
   }
   h1{
     font-size: 40px;
+    line-height: 40px;
     
 }
   .contact-links {

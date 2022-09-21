@@ -1,13 +1,16 @@
-<mat-toolbar  class="navbar">
+<mat-toolbar  class="navbar" id="navbar">
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
      <mat-icon>menu</mat-icon>
    </button>
    <span>My App</span>
    <span class="example-spacer"></span>
-   <button  mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+   <button aria-label="Like Count" class="count" [ngClass]="{'pink' : like}"  mat-icon-button disabled>
+    {{ likes }}
+  </button>
+   <button (click)="liked()" mat-icon-button class="example-icon favorite-icon " [ngClass]="{'pink' : like}" aria-label="Like Botton">
      <mat-icon>favorite</mat-icon>
    </button>
-   <button routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>share</mat-icon>
-  </button>
+   
+   
+   
  </mat-toolbar>

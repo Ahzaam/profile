@@ -24,7 +24,7 @@
 
 .contact-links,
 .contact-form-wrapper {
-  padding: 8% 5% 10% 5%;
+  padding: 100px 50px;
 }
 
 
@@ -51,7 +51,20 @@ h1{
     text-align: left;
 }
 
+.weather-input{
+  margin: 30px 0;
+  outline:invert;
+  color:white;
+  border: 1px solid grey;
 
+  border-radius: 15px;
+  padding-left: 20px;
+  max-width: 300px;
+  width: 100%;
+  background: transparent;
+  height: 30px;
+
+}
 
 
 .contact-form-wrapper {
@@ -76,11 +89,12 @@ h1{
 @media only screen and (max-width: 800px) {
   .contact-links,
   .contact-form-wrapper {
-   
+    padding: 50px 20px;
     width: 100%;
   }
   h1{
     font-size: 40px;
+    line-height: 40px;
     
 }
   .contact-links {

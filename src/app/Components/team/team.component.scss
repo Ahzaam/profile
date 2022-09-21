@@ -66,6 +66,12 @@ $totalColumns: 5;
         opacity: 1;
       }
     }
+    @media (max-width: 1200px) {
+      width: 33.33% !important;
+      max-width: 34% !important;
+      min-width: 33.333% !important;
+      flex-basis: 33.333% !important;
+    }
     
     @media (max-width: 800px) {
       width: 50% !important;

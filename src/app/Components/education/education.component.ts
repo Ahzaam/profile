@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EducationComponent implements OnInit {
 
+  divfocus:boolean = false;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  changefocus(){
+    console.log(this.divfocus)
+    this.divfocus = true
+  }
 }

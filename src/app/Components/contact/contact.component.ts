@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { AngularFireDatabase} from '@angular/fire/compat/database';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { AngularFirestore, AngularFirestoreDocument  } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-contact',
@@ -10,9 +11,9 @@ import { AngularFireDatabase} from '@angular/fire/compat/database';
 export class ContactComponent implements OnInit {
 
   myForm: FormGroup |any;
-  message: any;
 
-  constructor(private fb:FormBuilder, private db: AngularFireDatabase ) {
+
+  constructor(private fb:FormBuilder, private db: AngularFirestore,public snackBar: MatSnackBar ) {
     
     }
   
@@ -26,17 +27,38 @@ export class ContactComponent implements OnInit {
     })
 
     // this.myForm.valueChanges.subscribe(console.log)
-    this.message = this.db.object('Message')
+   
   }
 
   
 
   async submitForm(){
-    console.log(this.myForm.value)
+   
+    this.db.collection('Message').add(this.myForm.value)
+    .then((responce:any) => { 
+     
+      this.snackBar.open(`Message sent successfully. Thank you ${this.myForm.value.name}`, "🤘", {
+        duration: 3000,
+        verticalPosition: 'bottom',
+            horizontalPosition:'right',
+           panelClass:['mat-snackbar-white']
+        
+      });
+      this.myForm.reset()
+    })
+    .catch(err => {
+      this.snackBar.open(err, "", {
+        duration: 3000,
+        verticalPosition: 'bottom',
+            horizontalPosition:'right',
+           panelClass:['mat-snackbar-white']
+        
+      });
+    })
+
     
-   this.message.set(this.myForm.value)
-   .then((responce: any) => console.log(responce))
-   .catch((err:any) => console.log(err))
+    // let data = await  this.message.
+    // console.log(data)
    
   }
 
