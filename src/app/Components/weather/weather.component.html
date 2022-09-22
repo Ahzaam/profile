@@ -3,7 +3,7 @@
     
     <div class="contact-form-wrapper">
       <h1>Data Fetched From our <span class="good">Weather API</span></h1>   
-      <input type="text" class="weather-input" placeholder="Enter a city">
+      <input type="text" class="weather-input" (change)="getWeatherbycity($event)" placeholder="Enter a city">
         <div class="mt-2">
           <a  target="_blank"  href="http://weatherapp-api-vercel.vercel.app/forcast/kandy?apikey=3pF4SnRVhFRVzH0luGP1">
             <button class="btn btn-primary rounded-pill px-3 px-md-5 mx-md-3 my-md-3">API</button>
@@ -14,33 +14,43 @@
           </a>
         </div>
     </div>
-    <div class="contact-description text-secondary px-2">
+    <div class="contact-description text-secondary px-2 ">
       <!-- ******************************************* -->
-      <div class="weather-container">
-        <div class="bg night_bg"></div>
-        <div class="bg frosty_bg"></div>
-        <div class="bg sunny_bg"></div>
+
+      <div class="weather-container ">
+        <div [ngClass]="{'d-none': !fail}"> Failed to get weather data by your IP, 
+          <button mat-button color="primary" (click)="ngOnInit()">Retry</button> or enter a city name
+           <br>Why is this happening <button color="primary" (click)="alerterror()" mat-button>Details</button>
+          </div>
+
+        <div  *ngIf=" !load && !fail" >
+          <div class="bg " [ngClass]="{'night_bg': !WeatherData.Weather.isDay , 'sunny_bg':WeatherData.Weather.isDay  }"></div>
+        <!-- <div class="bg frosty_bg"></div> -->
+        <!-- <div class="bg sunny_bg"></div> -->
         <div class="text_container">
-          <div class="degrees"><span>&ordm;</span></div>
-          <div class="place"></div>
-          <div class="weather"></div>
+          <div class="degrees">{{ (WeatherData.Weather.main.temp - 273.15).toFixed(0) }}<span>&ordm;</span> <span style="font-size: 60px; margin-left: 20px;">c</span> </div>
+          <div class="place">{{ WeatherData.Weather.name }}</div>
+          <div class="weather">{{  WeatherData.Weather.weather[0].description }}</div>
         </div>
         <div class="circle_container">
-          <div class="circle"></div>
+          <div [ngClass]="{'circle': !WeatherData.Weather.isDay }"></div>
           <div class="circle1"></div>
           <div class="circle2"></div>
           <div class="circle3"></div>
         </div>
-        <div class="ground1 ground1_night"></div>
-        <div class="ground1 ground1_frosty"></div>
-        <div class="ground1 ground1_sunny"></div>
-        <div class="ground2 ground2_night"></div>
-        <div class="ground2 ground2_frosty"></div>
-        <div class="ground2 ground2_sunny"></div>
+        <div class="ground1" [ngClass]="{'ground1_night':  !WeatherData.Weather.isDay , 'ground1_sunny': WeatherData.Weather.isDay  }"></div>
+        <!-- <div class="ground1 ground1_frosty"></div> -->
+        <!-- <div class="ground1 ground1_sunny"></div> -->
+        <div class="ground2" [ngClass]="{'ground2_night':  !WeatherData.Weather.isDay , 'ground2_sunny': WeatherData.Weather.isDay  }"></div>
+        <!-- <div class="ground2 ground2_frosty"></div> -->
+        <!-- <div class="ground2 ground 2_sunny"></div> -->
+        </div>
+        
       </div>
+      <mat-progress-bar mode="indeterminate" [ngClass]="{'d-none': !load}"></mat-progress-bar>
 
       <!-- ////////////////////////////////////////// -->
-    
+      
     </div>
   </div>
   

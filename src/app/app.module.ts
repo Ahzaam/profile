@@ -54,6 +54,8 @@ import { FirestoreModule } from "@angular/fire/firestore";
 import { PricingComponent } from './Components/pricing/pricing.component';
 
 
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 // Three JS component
 // import { NgtCanvas } from '@angular-three/core';
 // import {NgtMesh, NgtBoxGeometry, NgtMeshStandardMaterial} from '@angular-three/schematics'
@@ -108,6 +110,7 @@ import { PricingComponent } from './Components/pricing/pricing.component';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FirestoreModule,
+    MatProgressBarModule,
   
     
   ],

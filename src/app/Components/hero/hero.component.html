@@ -1,5 +1,3 @@
-<app-dialog></app-dialog>
-
 <header style="background-image:url('assets/mac.png');" id="main">
   <!-- Quantity should be the same in Sass-->
 <div class="firefly"></div>
@@ -22,8 +20,15 @@
       <h1>Fawmee Ahzam </h1>
       
       <p>Software Engineer </p>
-        <a href="/assets/Fawmee-Ahzam.pdf" download><button (click)="cvDownload()" class="btn btn-primary my-5 rounded-pill">Download CV</button></a>
-        
+      <div class="row my-5">
+       <div class="col-7 my-2 col-md-4">
+        <a href="/assets/Fawmee-Ahzam.pdf" download><button (click)="cvDownload()" class="btn btn-primary  rounded-pill ">Download CV</button></a>
+       </div>
+       <div class="col-7 my-2 col-md-4">
+        <a href="#contactme"><button  class="btn btn-danger  rounded-pill ">Contact Me</button></a>
+       </div>
+   
+      </div>  
     </div>
    
   </header>

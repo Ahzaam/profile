@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
+
 const API_URL = 'https://weatherapp-api-vercel.vercel.app'
 const API_KEY = 'Ch0h2SiGKZW3cBHrFgGO'
 
@@ -11,26 +14,61 @@ const API_KEY = 'Ch0h2SiGKZW3cBHrFgGO'
 export class WeatherComponent implements OnInit {
 
   WeatherData : any
-  constructor() { }
+  fail:boolean = false
+  load:boolean = true
+  constructor(public snackBar: MatSnackBar, ) { }
 
   ngOnInit(): void {
     fetch(`${API_URL}/byip?apikey=${API_KEY}`)
     .then(responce => responce.json())
     .then(data => {
       this.WeatherData = data
-      console.log(data)
+      
       this.processData()
     })
-    .catch(err => console.error(err))
+    .catch(err => {
+      console.error(err)
+      this.fail = true;
+    } )
 
     
   }
 
-  processData(){
-    let date = new Date(this.WeatherData.dt)
-    console.log(date.getDate())
+  getWeatherbycity(event:any){
+    this.load = true
+    fetch(`${API_URL}/weather/${event.target.value}?apikey=${API_KEY}`)
+    .then(responce => responce.json())
+    .then(data => {
+      this.WeatherData = data
+      
+      this.processData()
+      this.snackBar.open( `Tweeted current ${event.target.value} weather  `, "🦜", {
+        duration: 3000,
+        verticalPosition: 'bottom',
+            horizontalPosition:'right',
+           panelClass:['mat-snackbar-white']
+        
+      });
+    })
+    .catch(err => {
+      console.error(err)
+      this.fail = true;
+    } )
+
   }
 
+  processData(){
+    console.log("processing....")
+    this.WeatherData.Weather.isDay = this.WeatherData.Weather.dt >= this.WeatherData.Weather.sys.sunrise && this.WeatherData.Weather.dt <= this.WeatherData.Weather.sys.sunset
+
+    console.log(this.WeatherData)
+    this.load = false
+    this.fail = false
+  }
+
+  alerterror(){
+    alert("Your ip location name might be the problem")
+  }
   
 
 }
