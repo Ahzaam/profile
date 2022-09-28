@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
 
@@ -12,7 +12,7 @@ const API_KEY = 'Ch0h2SiGKZW3cBHrFgGO'
   styleUrls: ['./weather.component.scss']
 })
 export class WeatherComponent implements OnInit {
-
+  @Output() IpLocation = new EventEmitter<any>()
   WeatherData : any
   fail:boolean = false
   load:boolean = true
@@ -23,7 +23,7 @@ export class WeatherComponent implements OnInit {
     .then(responce => responce.json())
     .then(data => {
       this.WeatherData = data
-      
+      this.IpLocation.emit(this.WeatherData.Ip)
       this.processData()
     })
     .catch(err => {
@@ -58,10 +58,7 @@ export class WeatherComponent implements OnInit {
   }
 
   processData(){
-    console.log("processing....")
     this.WeatherData.Weather.isDay = this.WeatherData.Weather.dt >= this.WeatherData.Weather.sys.sunrise && this.WeatherData.Weather.dt <= this.WeatherData.Weather.sys.sunset
-
-    console.log(this.WeatherData)
     this.load = false
     this.fail = false
   }

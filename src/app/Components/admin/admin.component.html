@@ -1,0 +1,45 @@
+<p>admin works!</p>
+
+<div class="container">
+    <button *ngIf="authState.currentUser === null" class="btn btn-primary display-3" (click)="authService.GoogleAuth()">
+        G
+    </button>
+
+    <button *ngIf="authState.currentUser != null" class="btn btn-danger display-3" (click)="s()">
+        SignOut
+    </button>
+
+    <div *ngIf="authState.currentUser != null"  >
+        <form [formGroup]="myForm"class="example-form my-5">
+
+            <mat-form-field class="example-form-field d-block" appearance="fill">
+                <mat-label>Company Name</mat-label>
+                <input matInput type="text" formControlName="cname">
+               
+              </mat-form-field>
+             
+
+              <mat-form-field class="example-form-field d-block" appearance="fill">
+                <mat-label>Message</mat-label>
+                <input matInput type="text" formControlName="message">
+               
+              </mat-form-field>     
+            <button class="btn btn-primary" (click)="submitForm()">Generate</button>  
+          </form>
+
+          <p>{{ link }}</p>
+          <div class="container">
+            <div class="lead border text-start" *ngFor="let data of clinks">
+              <p>Company: {{data.cname}}</p>
+              <p>Click: {{data.click}}</p>
+              <p>Message: {{data.message}}</p>
+              <p>Selected: {{data.selected}}</p>
+        
+            </div>
+
+
+          </div>
+         
+    
+    </div>
+</div>

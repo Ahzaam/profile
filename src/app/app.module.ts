@@ -51,10 +51,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { environment } from "src/environments/environment.prod";
 import { AngularFireModule } from "@angular/fire/compat";
 import { FirestoreModule } from "@angular/fire/firestore";
+import { AuthService } from './auth.service';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
 import { PricingComponent } from './Components/pricing/pricing.component';
 
 
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { SelectComponent } from './Components/select/select.component';
+import { AdminComponent } from './Components/admin/admin.component';
+import { NgParticlesModule } from "ng-particles";
 
 // Three JS component
 // import { NgtCanvas } from '@angular-three/core';
@@ -92,6 +98,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     DialogComponent,
     EducationComponent,
     PricingComponent,
+    SelectComponent,
+    AdminComponent,
     
   ],
   imports: [
@@ -111,10 +119,13 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FirestoreModule,
     MatProgressBarModule,
+    AngularFireAuthModule,
+    NgParticlesModule,
+
   
     
   ],
-  providers: [],
+  providers: [AuthService,],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

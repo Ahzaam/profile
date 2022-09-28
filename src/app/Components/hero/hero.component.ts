@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { AngularFirestore} from '@angular/fire/compat/firestore';
 import { increment } from '@angular/fire/firestore';
@@ -9,11 +9,14 @@ import { increment } from '@angular/fire/firestore';
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.scss']
 })
-export class HeroComponent implements OnInit {
 
+
+export class HeroComponent implements OnInit {
+  @Input() regdata: any = null;
   constructor(public snackBar: MatSnackBar, private db:AngularFirestore) { }
 
   ngOnInit(): void {
+  
   }
   
 

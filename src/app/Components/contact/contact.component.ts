@@ -23,7 +23,7 @@ export class ContactComponent implements OnInit {
       name:'',
       email:'',
       message:'',
-      read:'false'
+      read:false
     })
 
     // this.myForm.valueChanges.subscribe(console.log)
@@ -34,6 +34,7 @@ export class ContactComponent implements OnInit {
 
   async submitForm(){
    
+   if(this.myForm.value.message !== ''){
     this.db.collection('Message').add(this.myForm.value)
     .then((responce:any) => { 
      
@@ -55,6 +56,7 @@ export class ContactComponent implements OnInit {
         
       });
     })
+   }
 
     
     // let data = await  this.message.

@@ -1,0 +1,33 @@
+<div *ngIf="regData !== null">
+    
+
+<div class="selectmain mark" id="caffetti" *ngIf="!marked">
+    <h3>Do you think I'd fit in well at {{regData.cname}}? </h3>
+
+
+    <br>
+    <button class="btn btn-danger m-4 " (click)="notSelected()"> No</button>
+    <button class="btn btn-primary m-4" (click)="selected()">Yes</button>
+</div>
+
+<div class="selectmain selected" *ngIf="select">
+    <h3>Thank You!</h3>
+    <p class="lead text-white">awaiting your personal call</p>
+   
+</div>
+
+<div class="selectmain notselected" *ngIf="marked && !select">
+    <h3>We are Sorry!</h3>
+    <p class="lead text-info py-3"> We would appreciate hearing on your choice. </p>
+   
+</div>
+
+<!-- /Gampola?reg=BYgPGScfcJPIZe9WdXsq -->
+
+<div class="wrapper" >
+    <div *ngIf="select">
+        <div  *ngFor='let in of counter(300) ;let i = index' class="confetti-{{i}}"></div>
+    </div>
+    
+  </div>    
+</div>

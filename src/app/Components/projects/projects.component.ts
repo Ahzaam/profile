@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-projects',
@@ -7,59 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  projects: any = [
-    {
-      userId: 123,
-      username: 'mac',
-      email: 'mac@email.com',
-      name: 'Mac',
-    },
-    {
-      userId: 234,
-      username: 'john',
-      email: 'john@doe.com',
-      name: 'John Doe',
-    },
-    {
-      userId: 345,
-      username: 'jameer',
-      email: 'jameer@email.com',
-      name: 'Jameer',
-    },
-    {
-      userId: 345,
-      username: 'jameer',
-      email: 'jameer@email.com',
-      name: 'Jameer',
-    },
-    {
-      userId: 345,
-      username: 'jameer',
-      email: 'jameer@email.com',
-      name: 'Jameer',
-    },
-    {
-      userId: 345,
-      username: 'jameer',
-      email: 'jameer@email.com',
-      name: 'Jameer',
-    },
-    {
-      userId: 345,
-      username: 'jameer',
-      email: 'jameer@email.com',
-      name: 'Jameer',
-    },
-    {
-      userId: 345,
-      username: 'jameer',
-      email: 'jameer@email.com',
-      name: 'Jameer',
-    },
-    
-  ];
-
-  constructor() {
+  array :any
+  constructor(private render:Renderer2) {
   
    }
  
@@ -67,4 +16,21 @@ export class ProjectsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  openDes(event:any){
+    
+    this.array = event.target.parentNode.parentNode.parentNode.parentNode.parentNode
+    console.log(this.array, event.target.id)
+    if(!this.array.classList.contains('open')){
+    
+      this.render.addClass(this.array ,"open")
+      this.render.removeClass(this.array ,"close")
+    }else{
+      this.render.removeClass(this.array ,"open")
+      this.render.addClass(this.array ,"close")
+    }
+    
+  }
+  
+ 
 }

@@ -52,6 +52,7 @@ header {
       // text-transform: uppercase;
 	background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
 	-webkit-background-clip: text;
+  background-clip:linear-gradient(to right, #30CFD0 0%, #330867 100%);
 	-webkit-text-fill-color: transparent;
       font-size: 90px;
       font-family: "Dosis", sans-serif;
@@ -128,6 +129,9 @@ body {
   min-height: 100vh;
   font-family: "Baloo 2", sans-serif;
   margin: 0;
+}
+.main{
+  overflow-x: hidden;
 }
 
 

@@ -27,10 +27,15 @@
     "@ng-bootstrap/ng-bootstrap": "^13.0.0",
     "@popperjs/core": "^2.10.2",
     "bootstrap": "^5.2.0",
+    "canvas-confetti": "^1.5.1",
+    "confetti-js": "^0.0.18",
+    "ng-particles": "^3.3.2",
     "ngx-owl-carousel-o": "^14.0.1",
     "rxjs": "~7.5.0",
+    "rxjs-pausable": "^1.0.0",
     "three": "^0.142.0",
     "tslib": "^2.3.0",
+    "tsparticles-engine": "^2.3.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

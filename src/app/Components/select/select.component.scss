@@ -1,0 +1,109 @@
+.info{
+
+}
+
+.mark{
+  
+  background-color: #000000;
+  color: #00ff95;
+}
+
+.selected{
+  animation: thank 0.5s;
+  background-color: #ff0659;
+  color: aliceblue;
+  
+}
+
+.notselected{
+  animation: thank 0.5s;
+  background-color:  #000000;
+  color: #FEFF00;
+}
+
+@keyframes thank {
+  0%{
+    opacity: 0.5;
+    transform: scale(0.97);
+  } 
+  
+  50%{
+    transform: scale(1.03);
+    opacity: 1;
+  }
+  
+  100%{
+    transform: scale(1);
+  }
+}
+
+.selectmain{
+    max-width: 1500px;
+    
+    margin:100px auto;
+    border-radius: 10px;
+
+}
+
+h3{
+    
+    display: inline-block;
+    padding-top: 50px;
+    font-size: 50px;
+    line-height: 50px;
+}
+
+.lead{
+  padding-bottom: 100px;
+}
+
+
+@media only screen and (max-width:600px){
+    h3{
+        font-size: 30px;
+    }
+    
+}
+
+
+// ****************************
+
+body {
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  .wrapper {
+  height: 0px;
+   overflow-y: hidden;
+  }
+  
+  [class|="confetti"] {
+    position: fixed;
+  }
+  
+  $colors: (#ff0080, #fcff5b, #06dffc, #00ffc8);
+  
+  @for $i from 0 through 300 {
+    $w: random(20);
+    $l: random(200);
+    .confetti-#{$i} {
+      width: #{$w}px;
+      height: #{$w*0.4}px;
+      background-color: nth($colors, random(4));
+      top: -10%;
+      left: unquote($l+"%");
+      opacity: random() + 0.5;
+      transform: rotate(#{random()*360}deg);
+      animation: drop-#{$i} unquote(4+random()+"s") unquote(random()+"s") ;
+    }
+  
+    @keyframes drop-#{$i} {
+      100% {
+        top: 100%;
+        left: unquote($l+random(15)+"%");
+      }
+    }
+  }
+
+

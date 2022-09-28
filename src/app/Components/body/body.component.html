@@ -1,25 +1,40 @@
+<div class="text-center loader"  *ngIf="!load && !error">
+    <mat-spinner class="mx-auto my-5" ></mat-spinner>
+    <div class="lead mx-auto" >Generating template to {{cname}} . . .</div>
+</div>
 
-<div class="container-fluid" >
-<app-hero ></app-hero>
+<div class="text-center loader"  *ngIf="error">
+    <div class="lead mx-auto" >Failed to fetch . . .</div>
+    <button class="btn">Retry</button>
+</div>
+
+
+<div class="container-fluid text"  [ngClass]="{'d-ani': load}"  *ngIf="load">
+   
+<!-- @ts-nocheck -->
+<app-hero  [regdata]="data"></app-hero>
 
     <app-about></app-about>
 
 <app-education></app-education>
 <div class="pro-cont">
     <div class="underline">
-            <h1 class="pro-head">Projects </h1>
+        <h1 class="pro-head">Projects </h1>
     </div>
-    <app-weather></app-weather>
+    <app-weather (IpLocation)=event($event)></app-weather>
     <app-projects></app-projects>
-</div>
+
 
 <app-contact></app-contact>
-<!-- <app-team></app-team> -->
+</div>
 
+<app-select [regData]="data" [cdocid]="cdocid"></app-select>
 <app-footer></app-footer>
-<a href="#navbar" class="top-btn"><button mat-fab color="warn" aria-label="Example icon button with a home icon">
+
+<!-- 
+<a href="/#navbar" class="top-btn"><button mat-fab color="warn" aria-label="Example icon button with a home icon">
     Top
-  </button></a>
+  </button></a> -->
 </div>
 
 <!-- .password-suggestions:not(:focus) {

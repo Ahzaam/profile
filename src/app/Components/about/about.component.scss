@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 * {
   margin: 0;
   box-sizing: border-box;
+}
+
+h3{
+  font-size: 20px;
 }
 
 #contact {
@@ -24,7 +30,8 @@
 
 .skill-list p{
   font-size: 20px;
-  font-family:'Courier New', Courier, monospace;
+  line-height: 25px;
+  font-family:'Open Sans', Courier, monospace;
 }
 .contact-description,
 .contact-form-wrapper {
@@ -90,12 +97,16 @@
   line-height: 40px;
   text-align: left;
 }
-
+.code{
+  border-right: 1px solid grey;
+  display: inline-block;
+  overflow: hidden;
+}
 
 
 .web-about-cont{
   width: clamp(100px, 90%, 1500px);
-  background-color: #ff0665; //#fc0076;
+  background-color: #ff0659; //#fc0076;
   height: auto;
   color: #fff;
   display: block;
@@ -130,23 +141,29 @@
     }
 
   }
+  .code-btn{
+    font-size: 25px;
+    height: 60px;
+    width: 120px;
+    margin: 15px;
+  }
   .icon-cont-web{
  
     overflow: hidden;
     width: fit-content;
-    max-width: 600px;
-   
+    max-width: 700px;
+    
     display: inline-block;
     .icon-web-source{
       overflow: hidden;
       display: inline-block;
-      margin: 20px;
+      margin: 15px;
       background-color: #fff;
-      height: 80px;
-      width: 80px;
+      height: 60px;
+      width: 60px;
       border-radius: 10px;
       img{
-        width: 60px;
+        width: 40px;
         margin: 10px;
       }
     }
@@ -191,6 +208,10 @@
     .icon-cont-web{
       max-width: 100%;
     }
+
+    h3{
+      font-size: 11px;
+    }
   }
 
  
@@ -219,6 +240,10 @@
         font-size: 30px;
         line-height: 30px;
       }
+    }
+    .code-btn{
+      height: 60px;
+      margin: 10px;
     }
     .icon-cont-web{
       max-width: 100%;

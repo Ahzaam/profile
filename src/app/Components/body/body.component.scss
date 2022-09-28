@@ -7,13 +7,39 @@ p{
 .container-fluid{
     max-width: 2000px;
     overflow: hidden;
+
 }
 
 .pro-cont{
     padding: 100px 0;
-    background-color: #f5f5f5;
+    background-color: #f5f5f7;
 
     margin: 100px 0;
+}
+
+
+
+.d-ani{
+    animation: appear 0.5s ease-in;
+    animation-iteration-count: 1
+
+
+
+
+}
+.loader{
+    margin-top: 30vh;
+}
+
+@keyframes appear{
+    0%{
+        opacity: 0;
+        
+    }
+
+    100%{
+        scale: 1;
+    }
 }
 
 

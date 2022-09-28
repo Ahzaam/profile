@@ -18,8 +18,8 @@
       <!-- ******************************************* -->
 
       <div class="weather-container ">
-        <div [ngClass]="{'d-none': !fail}"> Failed to get weather data by your IP, 
-          <button mat-button color="primary" (click)="ngOnInit()">Retry</button> or enter a city name
+        <div [ngClass]="{'d-none': !fail}"> Failed to get weather data, 
+          <button mat-button color="primary" (click)="ngOnInit()">Retry</button> or enter valid city name
            <br>Why is this happening <button color="primary" (click)="alerterror()" mat-button>Details</button>
           </div>
 
