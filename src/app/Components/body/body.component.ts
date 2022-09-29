@@ -1,14 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import {fader } from '../../route-animations';
+// import {fader } from '../../route-animations';
+import { animate , style, transition, trigger } from '@angular/animations';
 import { ActivatedRoute} from '@angular/router';
 import { AngularFirestore} from '@angular/fire/compat/firestore';
 
 
 
+const enterTransition = transition(':enter', [
+  style({
+    transform: 'scale(0.2)',
+   
+  }),
+  animate('2s ease-in', style({transform: 'scale(1)',})),
+])
+const fadeIn = trigger('fadeIn', [enterTransition])
+
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.scss'],
+  animations:[fadeIn],
   
 })
 export class BodyComponent implements OnInit {

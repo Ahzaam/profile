@@ -9,7 +9,7 @@
 </div>
 
 
-<div class="container-fluid text"  [ngClass]="{'d-ani': load}"  *ngIf="load">
+<div class="container-fluid text"  [ngClass]="{'d-ani': load}"  *ngIf="load" @fadeIn>
    
 <!-- @ts-nocheck -->
 <app-hero  [regdata]="data"></app-hero>

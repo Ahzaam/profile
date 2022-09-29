@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
 
-const API_URL = 'https://weatherapp-api-vercel.vercel.app'
+const API_URL = 'https://apiweather.vercel.app'
 const API_KEY = 'Ch0h2SiGKZW3cBHrFgGO'
 
 

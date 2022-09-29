@@ -26,6 +26,7 @@
     "@angular/router": "^14.0.0",
     "@ng-bootstrap/ng-bootstrap": "^13.0.0",
     "@popperjs/core": "^2.10.2",
+    "aos": "^2.3.4",
     "bootstrap": "^5.2.0",
     "canvas-confetti": "^1.5.1",
     "confetti-js": "^0.0.18",

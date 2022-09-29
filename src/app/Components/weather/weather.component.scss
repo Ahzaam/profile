@@ -34,7 +34,7 @@
 }
 .contact-form-wrapper{
     width: 70%;
-    text-align: left;
+    text-align: center;
 }
 
 .contact-description{
@@ -43,12 +43,19 @@
     text-align: left
 }
 
+p{
+  color: #bdbdbd;
+}
+
+.yellow{
+  color:#00ff95;
+}
 
 h1{ 
-    font-size: 80px;
-    color: #ffff;
-    line-height: 80px;
-    text-align: left;
+    font-size: 50px;
+    color: #f2f3fd;
+    line-height: 50px;
+    text-align: center;
 }
 
 .weather-input{
@@ -93,8 +100,8 @@ h1{
     width: 100%;
   }
   h1{
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 25px;
+    line-height: 30px;
     
 }
   .contact-links {
