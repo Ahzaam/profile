@@ -19,11 +19,12 @@ h3{
 
 .contact-box {
 
-  width: clamp(100px, 100%, 1500px);
-  margin: 80px 0px;
+  width: clamp(10px, 100%, 2000px);
+  margin: 80px 0px 80px;
+  // padding-left:30px;
   display: flex;
   padding: auto;
-  column-gap: 1.7%;
+  column-gap: 0.6%;
   flex-wrap: wrap;
 }
 
@@ -36,14 +37,14 @@ h3{
 .contact-description,
 .contact-form-wrapper {
   padding: 20px 50px;
-  margin: 20px;
+  // margin: ;
 
-  width: 45%;
+  width: 49.7%;
 }
 
 .contact-form-wrapper{
   position: relative;
-  background-color: rgb(245, 245, 245)
+  background-color: rgb(0, 0, 0)
 }
 .contact-description{
   right: 0;
@@ -89,11 +90,10 @@ h3{
 // .contact-links {
 
 .about{
-  color:black ; //rgb(107, 107, 107);
+  color:#f5f5f7 ; //rgb(107, 107, 107);
   margin-bottom: 40px;
   font-size: 25px;
-  font-weight:lighter;
-  font-family: 'Roboto';
+  font-family: 'Open Sans';
   line-height: 40px;
   text-align: left;
 }
@@ -174,10 +174,16 @@ h3{
 
 
 @media only screen and (max-width: 1000px) {
+  .contact-box {
+
+    padding-left:0;
+ 
+  }
   .contact-form-wrapper {
     width: 100%;
   }
     .contact-description{
+        border-top: 10px solid #ffffff;
         width: 100%;
         text-align: left
     }
@@ -228,7 +234,7 @@ h3{
     margin: 8% 5%;
   }
   .about{
-    font-size: 20px;
+    font-size: 16px;
     line-height: 25px;
   }
 

@@ -11,7 +11,7 @@ const enterTransition = transition(':enter', [
     transform: 'scale(0.2)',
    
   }),
-  animate('2s ease-in', style({transform: 'scale(1)',})),
+  animate('0.3s ease-in', style({transform: 'scale(1)',})),
 ])
 const fadeIn = trigger('fadeIn', [enterTransition])
 
